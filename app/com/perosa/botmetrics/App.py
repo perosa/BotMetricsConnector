@@ -34,14 +34,14 @@ def send_to_botmetrics():
 
         # validate(request)
 
-        api_key = request.headers['BOTMETRICS_API_KEY']
+        api_key = request.headers['API_KEY']
 
         payload = request.get_json()
         headers = {'Content-Type': 'application/json'}
 
         if api_key is None:
-            logging.warning("BOTMETRICS_API_KEY is undefined")
-            return "Not sent: BOTMETRICS_API_KEY is undefined"
+            logging.warning("API_KEY is undefined")
+            return "Not sent: API_KEY is undefined"
         else:
 
             text = get_text(payload)
